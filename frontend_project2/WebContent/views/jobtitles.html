@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Register - User</title>
+<link rel="stylesheet" type="text/css" href="Resources/css/jobbg.css" />
+</head>
+<body>
+<div>
+Search <input ng-model="search">
+<table class="table">
+<thead>
+<tr>
+<th>Job Title</th><th>Posted On</th>
+</tr>
+</thead>
+<tbody>
+<tr ng-repeat="job in jobs | filter:search ">
+<td><a href="" ng-click="getJobDetail(job.id)">{{job.jobTitle}}</a></td><td>{{job.postedOn | date:'yyyy:MM:dd'}}</td>
+</tr> 
+</tbody>
+</table>
+<div ng-show="showdetails">
+<b>Job Details</b><br>
+<b>Job Title :</b> {{job.jobTitle}} <br>
+<b>Job Description :</b> {{job.jobDescription}} <br>
+<b>Skills Required :</b> {{job.skillsRequired}} <br>
+<b>Years of Experience :</b> {{job.yrsOfExp}} <br>
+<b>Location :</b> {{job.location}} <br>
+<b>Salary :</b> {{job.salary}} <br>
+<b>Company Name :</b> {{job.companyName}} <br>
+
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="Resources/css/bloglist.css" />
+</head>
+<body>
+<div class="table-responsive" ng-show="currentUser.role=='Admin'">
+<h3>List Of Blog Posts waiting for Approval</h3>
+<table class="table">
+<tr ng-repeat="blogPost in blogsWaitingForApproval | orderBy:'time':true">
+
+<td><a href="#getBlogForApproval/{{blogPost.id}}">{{blogPost.title}}</a></td>
+<td>Created By: {{blogPost.createdBy.firstname}}</td>
+<td>Created On: {{blogPost.postedOn |date:'MM/dd/yyyy HH:mm'}}</td>
+</tr>
+
+</table>
+</div>
+
+<div class="table-responsive">
+<h3>List Of Blog Posts</h3>
+<table class="table">
+<tr><th>Recent posts</th></tr>
+<tr ng-repeat="blogPost in blogsApproved | orderBy:'time':true">
+
+<td><a href="#getBlogDetail/{{blogPost.id}}">{{blogPost.title}}</a></td>
+<td>Created By: {{blogPost.createdBy.firstname}}</td>
+<td>Created On: {{blogPost.postedOn |date:'MM/dd/yyyy HH:mm'}}</td>
+</tr>
+
+</table>
+</div>
+</body>
+</html>

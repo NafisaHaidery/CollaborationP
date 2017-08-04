@@ -1,0 +1,15 @@
+<h4>Update Details</h4>
+<form>
+Firstname: <input type="text" ng-model="userobj.firstname" ><br>
+Lastname: <input type="text" ng-model="userobj.lastname" ><br>
+Email: <input type="text" ng-model="userobj.email" ><br>
+Username: <input type="text" ng-model="userobj.username" disabled="true"><br>
+Password: <input type="text" ng-model="userobj.password" ><br>
+Role: 
+<input type="radio" ng-model="userobj.role" value="Student">Student
+<input type="radio" ng-model="userobj.role" value="Alumini">Alumini
+<input type="radio" ng-model="userobj.role" value="Employee">Employee<br>
+<input type="submit" ng-click="update()"><br>
+
+{{message}}
+</form>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Register - User</title>
+<link rel="stylesheet" type="text/css" href="Resources/css/regbg.css" />
+</head>
+<body>
+<div>
+<h4><font color="blue">Please Register!!!</font></h4>
+<form>
+<table>
+    <tr>
+		<td> First Name: </td>
+		<td> <input type="text" ng-model="user.firstname"> </td>
+	</tr>
+	
+	<tr>
+		<td> Last Name: </td>
+		<td> <input type="text" ng-model="user.lastname"> </td>
+	</tr>
+    <tr>
+		<td> Enter Email: </td>
+		<td> <input type="text" ng-model="user.email"> </td>
+	</tr>
+    <tr>
+		<td> Username: </td>
+		<td> <input type="text" ng-model="user.username" placeholder="Choose a Username" maxlength="50"> </td>
+	</tr>
+    <tr>
+		<td> Password: </td>
+		<td> <input type="password" ng-model="user.password"> </td>
+	</tr>
+    <tr>
+    <td>Select Role:</td>
+    <td><input type="radio" ng-model="user.role" value="Student" />Student
+        <input type="radio" ng-model="user.role" value="Alumini" />Alumini
+        <input type="radio" ng-model="user.role" value="Employee" />Employee</td>
+    <tr>
+        <td><input type="submit" ng-click="register()" ></td>
+    </tr>   
+</table>
+</form>
+<table border="1">
+</table>
+</div>
+{{error.message}}
+</body>
+</html>

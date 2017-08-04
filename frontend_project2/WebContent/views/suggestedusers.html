@@ -1,0 +1,18 @@
+
+<div class="container">
+<table class="table table-striped">
+<thead>
+<tr>
+<th>Firstname</th><th>Lastname</th><th>Role</th><th>Online</th><th>Friend Request</th>
+</tr>
+</thead>
+<tbody>
+<tr ng-repeat="user in suggestedUsers">
+<td>{{user.firstname}}</td><td>{{user.lastname}}</td><td>{{user.role}}</td>
+<td ng-if="user.online">YES</td>
+<td ng-if="!user.online">NO</td>
+<td><a href="" ng-click="friendrequest(user.username)" class="btn btn-primary">Send Friend Request</a></td>
+</tr>
+</tbody>
+</table>
+</div>
